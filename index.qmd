@@ -1,5 +1,5 @@
 ---
-title: "MODELOS CONTINUOS"
+title: "MODELOS CONTINUOS DE PROBABILIDAD"
 subtitle: "TEOREMA DEL LIMITE CENTRAL"
 author: 
   - name: Dagoberto Salgado Horta
