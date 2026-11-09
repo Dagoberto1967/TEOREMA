@@ -115,7 +115,7 @@ La distribución normal está completamente definida por dos parámetros:
 
 **Media *(μ)*:** Indica la ubicación del centro de la curva y el valor más probable.
 
-**Varianza** σ2σ2 o Desviación Estándar (σ): Mide la dispersión o variabilidad de los datos. Una σ grande resulta en una curva más ancha y aplanada, mientras que una σ pequeña crea una curva más estrecha y alta.
+**Varianza** $\sigma^2$ o Desviación Estándar (σ): Mide la dispersión o variabilidad de los datos. Una σ grande resulta en una curva más ancha y aplanada, mientras que una σ pequeña crea una curva más estrecha y alta.
 
 **Fórmulas**
 
@@ -143,7 +143,7 @@ $$Z = \frac{x - \mu}{\sigma}$$
 
 La puntuación Z nos dice cuántas desviaciones estándar está un valor dado de la media. Luego, se usan tablas o software estadístico para encontrar las probabilidades correspondientes.
 
-## EJERCICIOS
+**EJERCICIOS**
 
 **Ejercicio 1.1**
 
@@ -155,14 +155,14 @@ Un investigador cientiﬁco informa que unos ratones vivirán un promedio de 40 
 
 3.  entre 37 y 49 meses
 
-### Parametros
+**Parametros**
 
 ```{r}
 media <- 40 
 desviacion_estandar <- 6.3
 ```
 
-### Solución de los puntos
+**Solución de los puntos**
 
 ::: panel-tabset
 #### Punto 1
@@ -230,7 +230,7 @@ prob_c <- prob_c_superior - prob_c_inferior
 cat("c)", round(prob_c, 4), "\n")
 ```
 
-**Grafíca**
+**Gráfica**
 
 ```{r}
 media <- 40
@@ -261,14 +261,14 @@ Una máquina expendedora de bebidas gaseosas se regula para que sirva un promedi
 
 3.  ¿cuántos vasos probablemente se derramarán si se utilizan vasos de 230 mililitros para las siguientes 1000 bebidas?
 
-### Parametros
+**Parametros**
 
 ```{r}
 media <- 200
 desviacion_estandar <- 15
 ```
 
-### Solucion de los puntos
+**Solucion de los puntos**
 
 ::: panel-tabset
 #### Punto 1
@@ -280,7 +280,7 @@ prob_a <- 1 - pnorm(224, mean = media, sd = desviacion_estandar)
 cat("a)", round(prob_a, 4), "\n")
 ```
 
-**Grrafíca**
+**Gráfica**
 
 ```{r}
 rango <- c(media - 3 * desviacion_estandar, media + 3 * desviacion_estandar)
@@ -307,7 +307,7 @@ prob_b <- prob_b_superior - prob_b_inferior
 cat("b)", round(prob_b, 4), "\n")
 ```
 
-**Grafíca**
+**Gráfica**
 
 ```{r}
 rango <- c(media - 3 * desviacion_estandar, media + 3 * desviacion_estandar)
@@ -362,14 +362,14 @@ ggplot(data.frame(x = rango), aes(x = x)) +
 
 4.  Encuentre la probabilidad de que 2 de los siguientes 3 viajes tomen al menos 1/2 hora.
 
-### Parametros
+**Parametros**
 
 ```{r}
 media <- 24
 desviacion <- 3.8
 ```
 
-### Solución de puntos
+**Solución de puntos**
 
 ::: panel-tabset
 #### Punto 1
@@ -495,7 +495,7 @@ A diferencia de la distribución normal, la distribución chi cuadrado no está 
 
 **Asimétrica a la Derecha:** La distribución es asimétrica con una cola larga hacia la derecha.
 
-**Media y Varianza:** La media de la distribución es igual a los grados de libertad **(μ=v)**, y la varianza es el doble de los grados de libertad **(σ2=2v)**.
+**Media y Varianza:** La media de la distribución es igual a los grados de libertad **(μ=v)**, y la varianza es el doble de los grados de libertad **($\sigma^2$=2v)**.
 
 **Dominio**: 𝑋≥0 (nunca toma valores negativos).
 
@@ -530,7 +530,7 @@ ggplot(df, aes(x = x, y = dens, color = k)) +
   theme_minimal(base_size = 14)
 ```
 
-## EJERCICIOS
+**EJERCICIOS**
 
 **Ejercicio 2.1**
 
@@ -542,7 +542,7 @@ Para una distribución chi cuadrada encuentre:
 
 3.$\chi_{0.05}^2$ cuando v = 24.
 
-### Solución de puntos
+**Solución de puntos**
 
 ::: panel-tabset
 #### Punto 1
@@ -688,7 +688,7 @@ Para una distribución chi cuadrada encuentre $\chi_\alpha^2$ tal que
 
 3.  $P(37.652 < X^2 < \chi_\alpha^2) = 0.045$ cuando $v = 25$.
 
-### Solución de puntos
+**Solución de puntos**
 
 ::: panel-tabset
 #### Punto 1
@@ -766,21 +766,21 @@ Matemáticamente, si Z es una variable aleatoria con distribución normal están
 
 **Principales características**
 
--   **Forma**: es simétrica respecto al cero, similar a la normal estándar, pero con colas más pesadas (mayor probabilidad en los extremos).
+- **Forma**: es simétrica respecto al cero, similar a la normal estándar, pero con colas más pesadas (mayor probabilidad en los extremos).
 
--   **Parámetro**: depende de los grados de libertad (vv); a mayor vv, la distribución se aproxima a la normal estándar N(0,1).
+- **Parámetro**: depende de los grados de libertad (v); a mayor v, la distribución se aproxima a la normal estándar N(0,1).
 
--   **Media**: 0 (para v\>1v \> 1).
+- **Media**: 0 (para v\>1).
 
--   **Varianza**: $\frac{v}{v-2} \quad (\text{para } v > 2)$
+- **Varianza**: $\frac{v}{v-2} \quad (\text{para } v > 2)$
 
 **Usos principales**
 
--   Pruebas de hipótesis sobre medias (prueba *t* de Student)
+- Pruebas de hipótesis sobre medias (prueba *t* de Student)
 
--   Construcción de intervalos de confianza para la medias
+- Construcción de intervalos de confianza para la medias
 
--   Modelar incertidumbre en muestras pequeñas
+- Modelar incertidumbre en muestras pequeñas
 
 **Familia de Curvas para T de Student**
 
@@ -1001,16 +1001,16 @@ La **distribución F**, también conocida como **F de Fisher-Snedecor**, es una 
 
 Si:
 
--   $X \sim \chi_{v_1}^2$ (una chi-cuadrado con $v_1$ grados de libertad),
--   $Y \sim \chi_{v_2}^2$ (otra chi-cuadrado con $v_2$ grados de libertad), y $X$ y $Y$ son independientes,
+- $X \sim \chi_{v_1}^2$ (una chi-cuadrado con $v_1$ grados de libertad),
+- $Y \sim \chi_{v_2}^2$ (otra chi-cuadrado con $v_2$ grados de libertad), y $X$ y $Y$ son independientes,
 
 entonces la variable:
 
-$$F = \frac{(X / v_1)}{(Y / v_2)}$$ sigue una **distribución F** con (v1,v2)(v1​,v2​) grados de libertad.
+$$F = \frac{(X / v_1)}{(Y / v_2)}$$ sigue una **distribución F** con (v1,v2) grados de libertad.
 
 **Propiedades principales**
 
-1.  **Soporte**: F\>0F\>0, es decir, solo toma valores positivos.
+1.  **Soporte**: F\>0, es decir, solo toma valores positivos.
 
 2.  **Asimétrica**: la curva de densidad es sesgada a la derecha, especialmente para pocos grados de libertad.
 
@@ -1281,11 +1281,11 @@ ggplot(df_f, aes(x = x, y = y)) +
 **RTA:** Para el quinto punto, $f_{0.99}$ con $v_1 = 28$ y $v_2 = 12$, aplicando la relación del recíproco $f_{0.99}(28, 12) = \frac{1}{f_{0.01}(12, 28)} = \frac{1}{2.90} = 0.345$, se determina que el valor crítico es $0.345$. Esto significa que con $28$ grados de libertad en el numerador y $12$ en el denominador, existe un $99\%$ de probabilidad de que la variable $F$ tome un valor superior a $0.345$, dejando un área del $1\%$ a la izquierda, expresado matemáticamente como: $$P(F > 0.345) = 0.99 \quad (\text{para } v_1 = 28, v_2 = 12)$$.
 :::
 
-# . TEOREMAS IMPORTANTES
+# .TEOREMAS IMPORTANTES
 
 Los teoremas que se presentan a continuación nos permitirán la justificación en la construcción de diferentes intervalos de confianza.
 
-## Teorema 1
+## .Teorema 1
 
 Si $$X \sim N(\mu, \sigma^2)$$ y $$Y = \frac{(X - \mu)^2}{\sigma^2}$$ entonces:
 
@@ -1293,13 +1293,13 @@ $$Y \sim \chi_1^2$$
 
 **Dem:** Por teorema de transformación de variables.
 
-## Teorema 2
+## .Teorema 2
 
 Si $$Y_1 \sim \chi_k^2$$ y $$Y_2 \sim \chi_v^2$$ variables aleatorias independientes, entonces:
 
 $$(Y_1 + Y_2) \sim \chi_{k+v}^2$$
 
-## Teorema 3
+## .Teorema 3
 
 Si $$X_1, X_2, \dots, X_n$$ son v.a.i.i.d. $$N(\mu, \sigma^2)$$ entonces:
 
@@ -1307,13 +1307,13 @@ $$\frac{(n-1)S_{n-1}^2}{\sigma^2} \sim \chi_{(n-1)}^2$$
 
 donde: $$S_{n-1}^2 = \frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n-1}$$
 
-## Teorema 4
+## .Teorema 4
 
 Si $$X \sim N(0,1)$$ y $$Y \sim \chi_v^2$$ son v.a. independientes y $$T = \frac{X}{\sqrt{Y / v}}$$
 
 entonces: $$T \sim t_v$$
 
-## Teorema 5
+## .Teorema 5
 
 Si $$X_1, X_2, \dots, X_n$$ son v.a.i.i.d. $$N(\mu, \sigma^2)$$ y $$T = \frac{\bar{X} - \mu}{S_{n-1} / \sqrt{n}}$$
 
@@ -1321,19 +1321,19 @@ Entonces: $$T \sim t_{(n-1)}$$
 
 **Dem:** (aplicación teorema anterior).
 
-## Teorema 6
+## .Teorema 6
 
 Si $$X \sim \chi_v^2$$ y $$Y \sim \chi_k^2$$ son v.a. independientes y $$F = \frac{X / v}{Y / k}$$
 
 entonces: $$F \sim F_{v,k}$$
 
-## Teorema 7
+## .Teorema 7
 
 Si $$X_1, X_2, \dots, X_n$$ es una m.a. $$N(\mu_1, \sigma_1^2)$$ y $$Y_1, Y_2, \dots, Y_m$$ es una m.a. $$N(\mu_2, \sigma_2^2)$$ independientes y si $$F = \frac{S_{n-1}^2 / \sigma_1^2}{S_{m-1}^2 / \sigma_2^2}$$
 
 Entonces: $$F \sim F_{(n-1),(m-1)}$$
 
-# . TEOREMA DEL LIMITE CENTRAL
+# .TEOREMA DEL LIMITE CENTRAL
 
 El **Teorema del Límite Central** (TLC) es uno de los conceptos más importantes en estadística. En términos simples, establece que la **distribución de la media de una muestra** se aproxima a una **distribución normal** a medida que el tamaño de la muestra aumenta, sin importar la forma de la distribución original de la población.
 
